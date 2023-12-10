@@ -31,9 +31,9 @@ SocketIO: A JavaScript library designed for real-time, bidirectional communicati
    - create an empty ssl folder under the project directory (I have included in the file[Not required])(Replaceable)
 
 
-   ```
-   mkdir ssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/private_key.pem -out ssl/certificate.pem -subj "//C=US//ST=California//L=San Francisco//O=MyOrganization//OU=MyDepartment//CN=<YOUR_LOCAL_IP>"
-   ```
+```
+mkdir ssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/private_key.pem -out ssl/certificate.pem -subj "//C=US//ST=California//L=San Francisco//O=MyOrganization//OU=MyDepartment//CN=<YOUR_LOCAL_IP>"
+```
 
 2) **update nginx.conf**
 
@@ -41,15 +41,15 @@ change `<YOUR_LOCAL_IP>` with your local ip same as step 1
 
 3) **update client.js file in resources**
 
-   file location: `src/main/resources/static/client.js`
+file location: `src/main/resources/static/client.js`
 
-   ```let socket = io.connect("https://<YOUR_LOCAL_IP>", {secure: true});```
+```let socket = io.connect("https://<YOUR_LOCAL_IP>", {secure: true});```
 
 4) **build docker image**
 
 - Install docker and login
 
-   `docker-compose up -d --build`
+`docker-compose up -d --build`
 
 ### Examples
 
